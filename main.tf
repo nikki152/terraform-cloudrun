@@ -21,7 +21,7 @@ resource "google_cloud_run_service" "app" {
   }
 }
 
-resource "google_cloud_run_member" "public_invoker" {
+resource "google_cloud_run_service_iam_member" "public_invoker" {
   service = google_cloud_run_service.app.name
   project = var.project_id
   location = var.region
